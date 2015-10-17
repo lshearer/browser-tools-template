@@ -1,0 +1,14 @@
+/*body {
+  background: center center url(activities.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}*/
+
+#awyiss {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: center center no-repeat url('aw-yiss.gif');
+  background-size: contain;
+}

@@ -1,0 +1,33 @@
+// All keys must only be ASCII [a-z], [A-Z], [0-9] and "_"
+{
+  // Actual localization data
+  "devtools_tab_name": {
+    "message": "My Tools!",
+    "description": "Name used for the tab visible in the dev tools."
+  },
+  // Slightly hacky localization data used for configuration
+  "devtools_logging_prefix": {
+    "message": "My Custom Browser Tools",
+    "description": "String used to prefix console logs made from the devtools panel."
+  },
+  "devtools_panel_path": {
+    "message": "/example/tool-panel.html?usingExtension=true&chromeExtensionId={extensionId}",
+    "description": "Path used to load the content page for the devtools panel. This must be a host-relative path. A {extensionId} placeholder will be replaced with the actual id of the Chrome extension."
+  },
+  "popup_path": {
+    "message": "/example/popup.html?usingExtension=true&chromeExtensionId={extensionId}",
+    "description": "Path used to load the content page for the devtools panel. This must be a host-relative path. A {extensionId} placeholder will be replaced with the actual id of the Chrome extension."
+  },
+  "site_local_dev_hosts": {
+    "message": "localhost:8080,my-awesome-machine:8080",
+    "description": "Comma-separated list of host names used to serve your site for local dev. This must include the port. This is a full match, not a suffix."
+  },
+  "site_host_suffixes": {
+    "message": "my-domain.com,my-test-domain.com",
+    "description": "Comma-separated list of suffixes for your site on production and test servers. These are suffixes and therefore don't need to match the entire host. These must not be TLDs (or effective TLDs) like '.com'."
+  },
+  "verbose": {
+    "message": "true",
+    "description": "JSON stringified boolean indicating whether verbose console logging is enabled."
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+
+# built scripts are included in the npm publish, but not committed to git
+dist/

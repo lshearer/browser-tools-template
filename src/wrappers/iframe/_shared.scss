@@ -1,0 +1,8 @@
+@import "../../../node_modules/hudl-kickoff/scss/variables";
+
+// some number that should be the largest z-index of a child of the body tag
+$max-page-index: 100000000000;
+$tool-panel-index: $max-page-index + 1;
+$popup-drag-fix-index: $tool-panel-index + 1;
+$popup-icon-index: $popup-drag-fix-index + 1;
+$popup-index: $popup-icon-index + 1;

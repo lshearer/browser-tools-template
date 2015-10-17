@@ -1,0 +1,66 @@
+@import "../shared";
+
+#ct-popup-icon {
+	$width: 29px;
+	position: fixed !important;
+	z-index: $popup-icon-index;
+	height: $width;
+	width: $width;
+	box-sizing: border-box;
+	padding: 2px;
+
+	font-size: 24px;
+	line-height: 24px;
+	background: url(./icon.jpg);
+	background-size: cover;
+	color: $orange;
+	border-radius: $width / 2;
+	text-align: center;
+	box-shadow: 0 0 6px rgba(0,0,0,0.5);
+	cursor: pointer;
+
+	opacity: .5;
+
+	transition: opacity .1s linear;
+
+	&:hover, &.selected {
+		opacity: 1;
+	}
+
+	span {
+		position: relative;
+		top: 1px;
+	}
+
+	svg {
+		fill: $orange;
+
+	}
+}
+
+
+#ct-popup-wrapper {
+	position: absolute;
+	z-index: $popup-index;
+	background-color: white;
+
+	border: 1px solid $medium-grey;
+	border-radius: 3px;
+	padding: 3px;
+	box-shadow: 0 0 6px rgba(0,0,0,0.5);
+
+	iframe {
+		width: 200px;
+		height: 200px;
+		border: none;
+	}
+}
+
+#ct-popup-drag-fix {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	z-index: $popup-drag-fix-index;
+	top:0;
+}

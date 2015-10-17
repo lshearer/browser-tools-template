@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "My Custom Browser Tools",
+  "description": "Develop, debug, and support my webapp.",
+  "version": "0.1",
+  // this allows iframes embedded within popup and dev tools to connect to the extension for messaging (in lieu of a content script)
+  "externally_connectable": {
+    "ids": [ "*" ],
+    "matches": [
+      // TODO remove these
+      "*://*.hudl.com/*",
+      "*://*.staghudl.com/*",
+      "*://*.thorhudl.com/*",
+      "http://localhost:53900/*",
+      "http://lyle:53900/*"
+    ]
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "devtools_page": "devtools.htm",
+  "page_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.htm"
+  },
+  "default_locale": "en",
+  "permissions": [
+    // Used to detect when to show the page action
+    "webNavigation",
+    "tabs",
+    // Using wildcards to allow for varying local machine names. Pages are filtered in background.js for popup and content scripts
+    "http://*/*",
+    "https://*/*"
+  ],
+  // this allows the page action popup and dev tools panel pages to load scripts from outside of the chrome extension.
+  // unsafe-eval option allows RequireJS to execute loader plugin code using default code
+  // http://developer.chrome.com/extensions/contentSecurityPolicy.html
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://*.hudl.com https://*.staghudl.com https://*.thorhudl.com http://localhost:53900; connect-src 'self' 'unsafe-eval' https://*.hudl.com https://*.staghudl.com https://*.thorhudl.com http://localhost:53900; object-src 'self'",
+  "icons": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+  }
+}
