@@ -5,12 +5,17 @@ class PageConnector extends Connector {
   constructor({paths}) {
     super(new PageMessagingConnector('app'));
 
+    var pageUrls = {
+      popup: paths.popup,
+      devToolsPanel: paths.devToolsPanel,
+    };
 
     this.messages.handleRequest('content-page-urls', function(data, respond) {
-      respond({
-        popup: paths.popup,
-        devToolsPanel: paths.devToolsPanel,
-      });
+      respond(pageUrls);
+    });
+
+    this.messages.trigger('page-navigated', {
+      urls: pageUrls
     });
 
     this.messages.on('proxied-console-log', function(e, log) {

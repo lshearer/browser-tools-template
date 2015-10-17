@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepublish": "gulp npm-prepublish",
-    "start": "http-server . & open http://localhost:8080/example/ && gulp watch"
+    "start": "http-server . & open http://localhost:8080/examples/ && gulp watch"
   },
   "repository": {
     "type": "git",

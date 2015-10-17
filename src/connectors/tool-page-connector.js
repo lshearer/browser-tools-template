@@ -62,6 +62,21 @@ class ToolPageConnector extends Connector {
       // redirectConsole(name, messageConnector);
       // logErrors();
     }
+
+    // If we switch pages and the extension-based DevTools panel is open, let's update it to
+    // the respective set of tools
+    this.messages.on('page-navigated', function(e, data) {
+      var urls = data.urls;
+      var url;
+      if (name === 'dev-tools-panel') {
+        url = urls.devToolsPanel;
+      } else if (name === 'popup') {
+        url = urls.popup;
+      }
+      if (url) {
+        window.location = url;
+      }
+    });
   }
 }
 
