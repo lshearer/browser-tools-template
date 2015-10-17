@@ -33,6 +33,7 @@ own webapp.
 
 ## Installing the Chrome extension
 The extension can be installed directly from the file system as a developer extension.
+
 1. Navigate to chrome://extensions/ in Chrome.
 2. Ensure "Developer mode" checkbox at the top is checked.
 3. Click "Load unpacked extension...".
