@@ -1,0 +1,45 @@
+@import "../shared";
+
+#ct-tools-panel-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: $tool-panel-index;
+
+	.resize-wrapper {
+		background-color: white;
+		position:absolute;
+		height: 200px;
+		width: 100%;
+		top: -200px;
+
+	}
+
+	.ui-resizable-handle {
+		position: static;
+		cursor: ns-resize!important;
+		height: 4px;
+		width: 100%;
+		background: $medium-grey;
+		border-bottom: 1px solid $dark-grey;
+		border-top: 1px solid $light-grey;
+		// leave a tiny space so the resizable can trigger a dragstart event before the mouse hovers the iframe and it starts capture events
+		margin-bottom: 1px;
+	}
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	#iframe-drag-fix {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+		opacity: 0;
+	}
+}

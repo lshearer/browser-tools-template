@@ -1,0 +1,5 @@
+dist/
+examples/
+
+# temporary - just moving the extension over for now; will clean it up later
+src/wrappers/chrome-extension

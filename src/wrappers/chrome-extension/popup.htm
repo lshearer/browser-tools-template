@@ -1,0 +1,27 @@
+<!-- Extension popup page. This is triggered by the page action icon that appears in the omnibox -->
+<!doctype html>
+<html>
+<head>
+  <title>My Custom Browser Tools Popup! Still pretty sure nobody can see this...</title>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    iframe {
+      min-width: 300px;
+      min-height: 200px;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- iframe that will be injected with the respective content page -->
+  <iframe></iframe>
+  <script src="js/content-loader-common.js"></script>
+  <script src="js/vendor/jquery-2.0.0.js"></script>
+  <script src="js/popup.js"> </script>
+</body>
+</html>

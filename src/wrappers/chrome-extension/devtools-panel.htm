@@ -1,0 +1,29 @@
+<!--Content page for the added Dev Tools panel-->
+
+<!doctype html>
+<html>
+<head>
+  <title>My Custom Browser Tools! Can anyone even see this??</title>
+  <style>
+    html, body, iframe {
+      width: 100%;
+      height: 100%;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    iframe {
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- iframe that will be injected with the respective content page -->
+  <iframe></iframe>
+  <script src="js/vendor/stacktrace.js"></script>
+  <script src="js/devtools-common.js"></script>
+  <script src="js/content-loader-common.js"></script>
+  <script src="js/devtools-panel.js"></script>
+</body>
+</html>

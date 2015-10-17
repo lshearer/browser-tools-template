@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "My Custom Browser Tools",
+  "description": "Develop, debug, and support my webapp.",
+  "version": "0.1",
+  // this allows iframes embedded within popup and dev tools to connect to the extension for messaging (in lieu of a content script)
+  "externally_connectable": {
+    "ids": [ "*" ],
+    "matches": [
+      // These are required for the content pages to connect to the extension (at least for now)
+      "*://*.my-domain.com/*",
+      "*://*.my-test-domain.com/*",
+      "http://localhost:8080/*",
+      "http://my-awesome-machine:8080/*"
+    ]
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "devtools_page": "devtools.htm",
+  "page_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.htm"
+  },
+  "default_locale": "en",
+  "permissions": [
+    // Used to detect when to show the page action
+    "webNavigation",
+    "tabs",
+    // Using wildcards to allow for varying local machine names. Pages are filtered in background.js for popup and content scripts
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+  }
+}
