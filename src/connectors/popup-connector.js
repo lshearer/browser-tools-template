@@ -1,6 +1,6 @@
-import ToolPageConnector from './tool-page-connector';
+import ContentPageConnector from './content-page-connector';
 
-class PopupConnector extends ToolPageConnector {
+class PopupConnector extends ContentPageConnector {
   constructor() {
     super({
       name: 'popup',

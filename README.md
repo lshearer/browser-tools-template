@@ -8,7 +8,8 @@ own website.
 
 1. Fork the repo.
 2. Update the [messages.json](src/wrappers/chrome-extension/_locales/en/messages.json) file with your own configuration.
-3. TODO
+3. Update the [manifest.json](src/wrappers/chrome-extension/manifest.json) file's `externally_connectable.matches` field. This should match the content in `site_local_dev_hosts` and `site_host_suffixes` in `messages.json`.
+4. Run the examples using `npm start`. This will compile the shared scripts, start a webserver, and launch the examples directory.
 
 ## Changelog
 See the [changelog](CHANGELOG.md).

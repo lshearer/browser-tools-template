@@ -1,6 +1,6 @@
-import ToolPageConnector from './tool-page-connector';
+import ContentPageConnector from './content-page-connector';
 
-class DevToolsPanelConnector extends ToolPageConnector {
+class DevToolsPanelConnector extends ContentPageConnector {
   constructor() {
     super({
       name: 'dev-tools-panel',

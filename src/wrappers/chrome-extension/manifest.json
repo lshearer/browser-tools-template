@@ -7,13 +7,11 @@
   "externally_connectable": {
     "ids": [ "*" ],
     "matches": [
-      // TODO remove these
-      "*://*.hudl.com/*",
-      "*://*.staghudl.com/*",
-      "*://*.thorhudl.com/*",
-      "http://localhost:53900/*",
+      // These are required for the content pages to connect to the extension (at least for now)
+      "*://*.my-domain.com/*",
+      "*://*.my-test-domain.com/*",
       "http://localhost:8080/*",
-      "http://lyle:53900/*"
+      "http://my-awesome-machine:8080/*"
     ]
   },
   "background": {
@@ -34,10 +32,6 @@
     "http://*/*",
     "https://*/*"
   ],
-  // this allows the page action popup and dev tools panel pages to load scripts from outside of the chrome extension.
-  // unsafe-eval option allows RequireJS to execute loader plugin code using default code
-  // http://developer.chrome.com/extensions/contentSecurityPolicy.html
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://*.hudl.com https://*.staghudl.com https://*.thorhudl.com http://localhost:53900; connect-src 'self' 'unsafe-eval' https://*.hudl.com https://*.staghudl.com https://*.thorhudl.com http://localhost:53900; object-src 'self'",
   "icons": {
       "16": "images/icon.png",
       "48": "images/icon.png",

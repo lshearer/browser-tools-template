@@ -58,7 +58,7 @@ gulp.task('lint', function() {
     .pipe(eslint.failAfterError());
 });
 
-// Publishing (adapted from hudl-gulp-multiverse-app: https://github.com/hudl/js-hudl-gulp-multiverse-app/blob/e94f58b9d6af5b1b7ed2d865a535b416de538c92/gulpfile.js#L36-L95)
+// Publishing
 // Prevents (in conjunction with the package.json `prepublish` hook) publishing via a direct call to `npm publish` and requires `gulp publish`
 
 // Triggered by npm prepublish script hook. Used to prevent directly calling `npm publish`.
@@ -108,7 +108,7 @@ gulp.task('publish', ['prepublish'], function() {
 
     var slowMessageTimeout = setTimeout(function() {
       // TODO pull registry server URL from package.json or npm_package_**
-      console.log(chalk.yellow('`npm publish` seems to be a bit slow. If it appears to be stalled, ensure you can connect to `http://npm.thorhudl.com`.'));
+      console.log(chalk.yellow('`npm publish` seems to be a bit slow. If it appears to be stalled, ensure you can connect to `http://registry.npmjs.org/`.'));
     }, 10000);
 
     publish.on('close', function(code) {

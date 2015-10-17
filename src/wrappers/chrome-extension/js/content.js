@@ -60,5 +60,5 @@
 
   port.onMessage.addListener(postMessageToWindow);
 
-  localStorage['hudl-inspector-chrome-extension-installed'] = JSON.stringify(true);
+  localStorage['custom-browser-tools-chrome-extension-installed'] = JSON.stringify(true);
 }());

@@ -2,17 +2,17 @@
 // TODO - remove keymaster dependency and just do raw JavaScript to lessen dependencies in the skeleton
 import keymaster from 'keymaster';
 import CallbackQueue from '../util/callback-queue';
-import { shortcutKeys } from '../connectors/settings';
+import { shortcutKeys } from './settings';
 
 const lazyLoadTimeout = 5000;
 
-const extensionInstalledStorageKey = 'hudl-inspector-chrome-extension-installed';
-const inspectorActiveStorageKey = 'hudl-inspector-active';
+const extensionInstalledStorageKey = 'custom-browser-tools-chrome-extension-installed';
+const inspectorActiveStorageKey = 'custom-browser-tools-active';
 
 function processConfig(config) {
   if (!config || !config.paths || !config.paths.scripts) {
     throw new Error('Expecting configuration with `paths.scripts` property set to the ' +
-      'path of the `hudl-inspector/dist` directory, as viewed from the browser.');
+      'path of the custom browser tools\' `dist` directory, as viewed from the browser.');
   }
 
   // http://webpack.github.io/docs/configuration.html#output-publicpath
@@ -124,7 +124,7 @@ class Skeleton {
           Promise.all([loadPageConnector(), initIFrameWrapper()])
             .catch(function(err) {
               console.error(err);
-              console.error('Failed to load Hudl Inspector with iframe wrapper.');
+              console.error('Failed to load custom browser tools with iframe wrapper.');
             });
         }
       }

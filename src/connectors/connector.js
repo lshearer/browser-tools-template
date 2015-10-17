@@ -1,7 +1,7 @@
 import MessageController from '../messaging/message-controller';
-import * as settings from './settings';
+import * as settings from '../loader/settings';
 
-// This is a means of connecting to other Hudl Inspector components by providing
+// This is a means of connecting to other browser tools components by providing
 // various APIs. An instance of this is comparable to the `chrome` namespace for Chrome extensions.
 class Connector {
   constructor(messagingConnector) {
