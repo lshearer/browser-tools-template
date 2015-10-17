@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   var tools = window["custom-browser-tools-loader"];
 
   tools.init({
@@ -12,4 +12,10 @@
     }
   });
 
-}());
+  tools.onLoaded(function(connector) {
+    connector.messages.on('spice-things-up', function() {
+      $('<img src="browser-tools/images/cat-party.gif">').appendTo('body');
+    });
+  });
+
+}(jQuery));
