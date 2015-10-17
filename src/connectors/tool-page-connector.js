@@ -34,32 +34,33 @@ function logErrors() {
 }
 
 class ToolPageConnector extends Connector {
-  constructor({name, extensionId = null}) {
+  constructor({name}) {
 
-    // const messageConnector = extensionId ? new EmbeddedExtensionPageMessagingConnector({
-    //   name,
-    //   extensionId,
-    // }) : new IframeMessagingConnector(name);
+    var exec = /browserToolsChromeExtensionId=(.*)/.exec(location.href);
+    var extensionId = exec && exec[1];
 
-    let isInExtension;
-    // If the parent document can be accessed, the pages must be the same protocol, which
-    // would exclude an iframe (http://) inside of an extension page (chrome://).
-    try {
-      window.parent.document;
-      isInExtension = false;
-    } catch (e) {
-      isInExtension = true;
-    }
+    const messageConnector = extensionId ? new EmbeddedExtensionPageMessagingConnector({
+      name,
+      extensionId,
+    }) : new IframeMessagingConnector(name);
 
-    const messageConnector = isInExtension ? new PageMessagingConnector(name) : new IframeMessagingConnector(name);
+    // let isInExtension;
+    // // If the parent document can be accessed, the pages must be the same protocol, which
+    // // would exclude an iframe (http://) inside of an extension page (chrome://).
+    // try {
+    //   window.parent.document;
+    //   isInExtension = false;
+    // } catch (e) {
+    //   isInExtension = true;
+    // }
+    //
+    // const messageConnector = isInExtension ? new PageMessagingConnector(name) : new IframeMessagingConnector(name);
     super(messageConnector);
 
-    console.log('usingExtension:' + isInExtension);
-
-    if (isInExtension) {
+    if (!!extensionId) {
       // Send messages to the main page's console, mostly for easier DevTools panel debugging
-      redirectConsole(name, messageConnector);
-      logErrors();
+      // redirectConsole(name, messageConnector);
+      // logErrors();
     }
   }
 }

@@ -1,10 +1,9 @@
 import ToolPageConnector from './tool-page-connector';
 
 class PopupConnector extends ToolPageConnector {
-  constructor({extensionId = null}) {
+  constructor() {
     super({
       name: 'popup',
-      extensionId,
     });
   }
 }

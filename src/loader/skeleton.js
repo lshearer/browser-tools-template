@@ -39,12 +39,25 @@ class Skeleton {
 
         onLoadStartCallbacks.resolve(callback => callback());
 
+        function getFullUrl(partialPath) {
+          const link = document.createElement('a');
+          link.href = partialPath;
+          let url = link.href;
+          url += (url.indexOf('?') === -1 ? '?' : '&') + 'nocache=' + (+new Date());
+          return url;
+        }
+
+        var paths = {
+          popup: getFullUrl(config.paths.popup),
+          devToolsPanel: getFullUrl(config.paths.devToolsPanel)
+        };
+
         function loadPageConnector() {
           return new Promise(function(resolve, reject) {
             require.ensure([], function() {
               const PageConnector = require('../connectors/page-connector');
               const pageConnector = new PageConnector({
-                paths: config.paths,
+                paths: paths,
               });
 
               onLoadedCallbacks.resolve(callback => callback(pageConnector));
@@ -62,7 +75,7 @@ class Skeleton {
               const IFrameWrapper = require('../wrappers/iframe');
 
               const wrapper = new IFrameWrapper({
-                paths: config.paths,
+                paths: paths,
               });
               let isActive = false;
 

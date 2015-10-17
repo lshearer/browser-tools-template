@@ -5,16 +5,11 @@ class PageConnector extends Connector {
   constructor({paths}) {
     super(new PageMessagingConnector('app'));
 
-    function getFullUrl(partialPath) {
-      var link = document.createElement('a');
-      link.href = partialPath;
-      return link.href;
-    }
 
     this.messages.handleRequest('content-page-urls', function(data, respond) {
       respond({
-        popup: getFullUrl(paths.popup),
-        devToolsPanel: getFullUrl(paths.devToolsPanel),
+        popup: paths.popup,
+        devToolsPanel: paths.devToolsPanel,
       });
     });
 

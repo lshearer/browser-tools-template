@@ -40,7 +40,7 @@ function getMySitesFilterCriteria() {
 
 chrome.webNavigation.onCommitted.addListener(function(details) {
   console.debug('webnavigation oncommitted', details.url, details);
-}, []);
+}, {});
 
 // Show the page action for pages on my website
 chrome.webNavigation.onCommitted.addListener(function(details) {

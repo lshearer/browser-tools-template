@@ -11,4 +11,10 @@
       popup: 'browser-tools/popup'
     }
   });
+
+  toolsLoader.onLoaded(function(tools) {
+    tools.messages.on('popup-loaded', function(e) {
+      console.debug('popup loaded');
+    });
+  });
 }(jQuery));

@@ -12,6 +12,7 @@
       "*://*.staghudl.com/*",
       "*://*.thorhudl.com/*",
       "http://localhost:53900/*",
+      "http://localhost:8080/*",
       "http://lyle:53900/*"
     ]
   },
