@@ -13,7 +13,7 @@
 	line-height: 24px;
 	background: url(./icon.jpg);
 	background-size: cover;
-	color: $orange;
+	// color: $orange;
 	border-radius: $width / 2;
 	text-align: center;
 	box-shadow: 0 0 6px rgba(0,0,0,0.5);
@@ -32,10 +32,10 @@
 		top: 1px;
 	}
 
-	svg {
-		fill: $orange;
-
-	}
+	// svg {
+	// 	fill: $orange;
+	//
+	// }
 }
 
 

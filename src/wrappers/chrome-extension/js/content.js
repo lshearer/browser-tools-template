@@ -1,4 +1,4 @@
-// Content script. Used purely to proxy communication between Hudl page and extension pages.
+// Content script. Used purely to proxy communication between our app page and extension pages.
 
 // Note: the page is not communicating directly with the extension pages as outlined
 // at http://developer.chrome.com/extensions/messaging.html#external-webpage because the
