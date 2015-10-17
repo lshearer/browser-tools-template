@@ -48,7 +48,7 @@ class IFrameWrapper {
       (isShown ? hide : show)();
     }
 
-    messaging.on('toggle-hudl-inspector', function() {
+    messaging.on('toggle-browser-tools', function() {
       toggle();
     });
 
